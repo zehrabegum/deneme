@@ -1,33 +1,33 @@
 ﻿using System;
 
-namespace ConsoleApp9
+namespace ConsoleApp6
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("İKİ TANE SAYİ GİRİNİZ:");
-            int sayi1 = int.Parse(Console.ReadLine());
-            int sayi2 = int.Parse(Console.ReadLine());
-            int buyuk;
-            int kucuk;
-            if (sayi1 < sayi2)
+            Console.WriteLine("Sayi Giriniz:");
+            int sayi = int.Parse(Console.ReadLine());
+            for(int i=2;i<sayi;i++)
             {
-                buyuk = sayi2;
-                kucuk = sayi1;
+                if (sayi % i == 0)
+                { 
+                    Console.WriteLine("sayi asal degildir");   
+                }
+                else
+                {
+                    Console.WriteLine("sayi asaldir");
+                    break;//koysan da olur koymasan da.
+                }
             }
-            else
+            if(sayi==1)
             {
-                buyuk = sayi1;
-                kucuk = sayi2;
+                Console.WriteLine("sayi asal degildir");
             }
-            int kat = kucuk;
-            while (kat % kucuk != 0 || kat % buyuk != 0)
+            if (sayi == 2)
             {
-                kat=kat+kucuk;
+                Console.WriteLine("sayi asaldir");
             }
-            Console.WriteLine("sonuc:{0}", kat);
         }
     }
-    
 }
