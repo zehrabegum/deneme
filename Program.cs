@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApp6
+namespace ConsoleApp5
 {
     class Program
     {
@@ -8,26 +8,16 @@ namespace ConsoleApp6
         {
             Console.WriteLine("Sayi Giriniz:");
             int sayi = int.Parse(Console.ReadLine());
-            for(int i=2;i<sayi;i++)
+            int toplam = 0;
+            for (int i = 1; i < sayi ; i++)
             {
-                if (sayi % i == 0)
-                { 
-                    Console.WriteLine("sayi asal degildir");   
-                }
-                else
+                if(sayi%i==0)
                 {
-                    Console.WriteLine("sayi asaldir");
-                    break;//koysan da olur koymasan da.
+                    toplam += i;
                 }
+               
             }
-            if(sayi==1)
-            {
-                Console.WriteLine("sayi asal degildir");
-            }
-            if (sayi == 2)
-            {
-                Console.WriteLine("sayi asaldir");
-            }
+            Console.WriteLine("Bölenleri Toplamı:{0}",toplam);
         }
     }
 }
